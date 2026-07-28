@@ -45,7 +45,7 @@ body {
   text-decoration: none;
 }
 
-.topbar img {
+.topbar .torch {
   height: 1.5em;               /* em => the torch tracks the wordmark's font-size, not the bar */
   width: auto;                 /* keep the logo's own proportions */
   display: block;              /* no inline baseline gap under the image */
