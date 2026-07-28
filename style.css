@@ -31,12 +31,12 @@ body {
   height: var(--bar-height);
   display: flex;
   align-items: center;
-  padding-left: 1.5em;
+  padding: 0 1.5em;
 }
 
-/* the bar holds one link home: torch + wordmark, side by side.
-   Copy the .topbar markup verbatim into a new page. */
-.topbar a {
+/* the link home: torch + wordmark, side by side. Scoped to .wordmark so it
+   doesn't catch the menu icons. Copy the .topbar markup verbatim into a new page. */
+.topbar .wordmark {
   display: flex;
   gap: 0.5em;
   color: #fff;
@@ -44,14 +44,6 @@ body {
   font-weight: bold;
   text-decoration: none;
   white-space: nowrap;   /* the bar's height is fixed, so a wrap spills out of it top and bottom */
-}
-
-/* Drop "Association" from the title bar on small screens. The full name is
- * ~25.8 wide. Cutoff at 28 to keep a bit of padding on the side. the anchor's
- * aria-label carries the whole name, so the link reads identically to a screen
- * reader at every width */
-@media (max-width: 28em) {
-  .wordmark-tail { display: none; }
 }
 
 .topbar .torch {
@@ -86,8 +78,7 @@ nav hr {
 
 nav ul { list-style: none; margin: 0; padding: 0; }
 nav li { margin: 0.15em 0; }
-nav a, nav a:visited,
-.menu-open, .menu-open:visited { color: var(--nyu-violet); }
+nav a, nav a:visited { color: var(--nyu-violet); }
 nav a { text-decoration: none; }
 nav a:hover { text-decoration: underline; }
 nav [aria-current="page"] { font-weight: bold; }
@@ -97,9 +88,12 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
 .menu-open, .menu-close { display: none; }
 
 /* ---- desktop: sidebar ---- */
-@media (min-width: 40em) {
+/* 48em, not less: the sidebar + gaps cost a fixed 368px, so below this the
+   article drops under ~45 characters a line. The mobile layout is wider at
+   every viewport, so switching later only helps the measure. */
+@media (min-width: 48em) {
   /* column-gap only: the 2em row gap above still spaces the notes off the article */
-  .layout { column-gap: 3.5em; }
+  .layout { column-gap: 3em; }
 
   nav {
     align-self: start;                     /* content height, so the line is exactly as tall as the nav list */
@@ -107,38 +101,70 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
 }
 
 /* ---- mobile: full-screen menu via :target ---- */
-/* 39.99em, not 40em: max-width and min-width are both inclusive, so a shared
-   40em boundary would make this block and the desktop one apply at once. */
-@media (max-width: 39.99em) {
+/* 47.99em, not 48em: max-width and min-width are both inclusive, so a shared
+   48em boundary would make this block and the desktop one apply at once. */
+@media (max-width: 47.99em) {
   .layout {
     grid-template-columns: 1fr;
-    grid-template-areas: "nav" "main" "notes";
+    /* no nav row: the nav is hidden or a fixed overlay, so it never occupies one */
+    grid-template-areas: "main" "notes";
     gap: 1em;
     padding: 1em;
   }
 
-  /* the trigger stands in for the nav in the flow here — the nav itself is
-     either hidden or a fixed overlay, so it never occupies its own area.
-     Placed explicitly: left to auto-placement it would drift to the bottom
-     the moment anything else claimed the first row. */
-  .menu-open { grid-area: nav; }
-
-  /* same divider, two states: the trigger and the menu's own close link */
-  .menu-open, nav:target .menu-close {
-    display: block;
-    margin-bottom: 1em;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid var(--rule);
-  }
-
   nav { display: none; }
 
-  /* the overlay opens under its own "Close" divider, so a lone "Menu" label and
-     rule would only repeat it — drop both, and the list starts at the top */
+  /* the bar's X is the overlay's header — drop the label and rule, list starts at the top */
   .menu-label, nav hr { display: none; }
 
   /* keep the purple bar pinned and above the menu overlay */
   .topbar { position: sticky; top: 0; z-index: 20; }
+
+  /* Drop "Association" from the wordmark */
+  .wordmark-tail { display: none; }
+
+  /* ---- the hamburger / X, at the right end of the bar ---- */
+  /* Two anchors, not one: :target keys off the href, which CSS can't rewrite.
+     :has() picks which of them is showing. */
+  .menu-open, .topbar .menu-close {
+    position: relative;            /* containing block for the two bars below */
+    width: 2.75rem;                /* 44px tap target; the icon inside is smaller */
+    height: 2.75rem;
+    margin-left: auto;             /* right end of the bar */
+  }
+  /* the middle bar; the outer two are the pseudo-elements */
+  .menu-open {
+    display: block;
+    background: linear-gradient(#fff, #fff) center / 1.375rem 2px no-repeat;
+  }
+
+  body:has(nav:target) .menu-open { display: none; }
+  body:has(nav:target) .topbar .menu-close { display: block; }
+
+  .menu-open::before, .menu-open::after,
+  .topbar .menu-close::before, .topbar .menu-close::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 1.375rem; height: 2px;
+    margin: -1px 0 0 -0.6875rem;   /* half its own size, to center */
+    background: #fff;
+  }
+  .menu-open::before          { transform: translateY(-0.4rem); }
+  .menu-open::after           { transform: translateY(0.4rem); }
+  .topbar .menu-close::before { transform: rotate(45deg); }
+  .topbar .menu-close::after  { transform: rotate(-45deg); }
+
+  /* no :has() — the rules above are dropped whole, so the bar keeps showing the
+     hamburger and the overlay needs its own way out */
+  @supports not selector(:has(*)) {
+    nav:target .menu-close {
+      display: block;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--rule);
+    }
+  }
 
   nav:target {
     display: block;
@@ -187,6 +213,6 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
 .endnotes li:target,
 .noteref:target { background: #f4ec5166; }
 
-/* under 40em the topbar is sticky, so an un-offset jump parks the target under it.
+/* under 48em the topbar is sticky, so an un-offset jump parks the target under it.
    main h2 is here for links to a section's own id, e.g. resources.html#profs. */
 .noteref, .endnotes li, main h2 { scroll-margin-top: calc(var(--bar-height) + 1em); }
