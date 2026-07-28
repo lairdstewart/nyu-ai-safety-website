@@ -43,6 +43,15 @@ body {
   font-size: 26px;
   font-weight: bold;
   text-decoration: none;
+  white-space: nowrap;   /* the bar's height is fixed, so a wrap spills out of it top and bottom */
+}
+
+/* Drop "Association" from the title bar on small screens. The full name is
+ * ~25.8 wide. Cutoff at 28 to keep a bit of padding on the side. the anchor's
+ * aria-label carries the whole name, so the link reads identically to a screen
+ * reader at every width */
+@media (max-width: 28em) {
+  .wordmark-tail { display: none; }
 }
 
 .topbar .torch {
