@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resources — NYU AI Safety Association</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/nyu-logo.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="index.html">
+        <img src="assets/nyu-torch-white.svg" alt="" />
+        <span>NYU AI Safety Association</span>
+      </a>
+    </header>
+
+    <div class="layout">
+      <a class="menu-open" href="#menu">Menu</a>
+      <nav id="menu">
+        <a class="menu-close" href="#">Close</a>
+        <span class="menu-label">Menu</span>
+        <hr />
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="what-is-ai-safety.html">What is AI Safety?</a></li>
+          <li><a href="intro-seminar.html">Intro AI Safety Seminar</a></li>
+          <li><a href="alignment-group.html">Alignment reading group</a></li>
+          <li><a href="resources.html" aria-current="page">Resources</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <h1>Resources</h1>
+        <p>
+          <i
+            >A collection of AI Safety related organizations and people.
+            Inclusion does not imply a relationship with NYU AI Safety. This
+            list is not yet complete.
+          </i>
+        </p>
+
+        <h2 id="nyu-orgs">Related organizations at NYU</h2>
+        <ul>
+          <li>
+            <a href="https://wp.nyu.edu/arg/">NYU Alignment Research Group</a>.
+            PI Sam Bowman is on leave.
+          </li>
+          <li>
+            <a href="https://nyuea.com/">NYU Effective Altruism</a>. Previously
+            held a retreat on AI Safety.
+          </li>
+          <li>
+            <a href="https://airesponsibly.net/">Center for Responsible AI</a>.
+            Research center focusing on "responsible data engineering,
+            algorithmic fairness, transparency and explainability, and privacy
+            and data protection". Has researched preventing LLM jailbreaks<a
+              class="noteref"
+              id="ref-fonseca-jailbreak"
+              href="#note-fonseca-jailbreak"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://petalnyu.github.io/petal-nyu/">petal</a>. Student
+            club for policy, ethics, tech, accountability, law.
+          </li>
+        </ul>
+
+        <h2 id="nyc-orgs">Related organizations in NYC</h2>
+        <ul>
+          <li>
+            <a href="https://collider.nyc/">Collider</a>. New York AI safety
+            community
+          </li>
+          <li>
+            <a href="https://www.cualignment.org/"
+              >Columbia AI Alignment Club</a
+            >
+          </li>
+        </ul>
+
+        <h2 id="profs">NYU Professors with related research</h2>
+        <ul>
+          <li>
+            <a href="https://hhexiy.ai/">He He</a>. Interpretability,
+            evaluation, and oversight.
+          </li>
+          <li>
+            <a href="https://kyunghyuncho.me/">Kyunghyun Cho</a>. Mainly focuses
+            on AI for biology and medicine, but has published on alignment<a
+              class="noteref"
+              id="ref-alignment-distillation"
+              href="#note-alignment-distillation"
+              role="doc-noteref"
+            ></a
+            >, unlearning<a
+              class="noteref"
+              id="ref-unlearning-metrics"
+              href="#note-unlearning-metrics"
+              role="doc-noteref"
+            ></a
+            >, and interpretability<a
+              class="noteref"
+              id="ref-prompting-geometry"
+              href="#note-prompting-geometry"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://cims.nyu.edu/~bruna/bio/">Joan Bruna</a>. Mostly
+            deep learning theory. One interpretability paper<a
+              class="noteref"
+              id="ref-linear-truth-encodings"
+              href="#note-linear-truth-encodings"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://eunsol.github.io">Eunsol Choi</a>. Partial focus on
+            continual learning. Papers on LLM behavioral evaluation<a
+              class="noteref"
+              id="ref-choi-eval"
+              href="#note-choi-eval"
+              role="doc-noteref"
+            ></a>
+            and implicit user feedback for training<a
+              class="noteref"
+              id="ref-choi-feedback"
+              href="#note-choi-feedback"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://gregdurrett.github.io/#research">Greg Durrett</a>.
+            NLP and machine learning. Many papers on alignment<a
+              class="noteref"
+              id="ref-durrett-sparta"
+              href="#note-durrett-sparta"
+              role="doc-noteref"
+            ></a
+            ><a
+              class="noteref"
+              id="ref-durrett-overton"
+              href="#note-durrett-overton"
+              role="doc-noteref"
+            ></a
+            ><a
+              class="noteref"
+              id="ref-durrett-pairwise"
+              href="#note-durrett-pairwise"
+              role="doc-noteref"
+            ></a>
+            and interpretability<a
+              class="noteref"
+              id="ref-durrett-heads"
+              href="#note-durrett-heads"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+        </ul>
+      </main>
+
+      <!-- ENDNOTES: a sibling of <main>, not a child, so the grid places it in
+           its own row below the article, clear of the article's own width.
+           The visible numerals come from CSS counters, so the order of these
+           <li> is the only thing that sets them. Add or reorder a note and
+           everything renumbers itself; never type a number here. The ids are
+           names, not numbers, so links survive reordering. -->
+      <section class="endnotes" role="doc-endnotes">
+        <ol>
+          <li id="note-fonseca-jailbreak">
+            <a href="https://aclanthology.org/2025.emnlp-main.1010.pdf">
+              SafeNudge: Safeguarding Large Language Models in Real-time with
+              Tunable Safety-Performance Trade-offs
+            </a>
+            (Fonseca et al., 2025)
+            <a
+              href="#ref-fonseca-jailbreak"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-alignment-distillation">
+            <a href="https://arxiv.org/abs/2509.23667v1">
+              Why Alignment Must Precede Distillation: A Minimal Working
+              Explanation
+            </a>
+            (Cha &amp; Cho, 2025)
+            <a
+              href="#ref-alignment-distillation"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-unlearning-metrics">
+            <a href="https://arxiv.org/abs/2510.12981">
+              Reference-Specific Unlearning Metrics Can Hide the Truth: A
+              Reality Check
+            </a>
+            (Cho et al., 2025)
+            <a
+              href="#ref-unlearning-metrics"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-prompting-geometry">
+            <a href="https://arxiv.org/abs/2502.08009">
+              The geometry of prompting: Unveiling distinct mechanisms of task
+              adaptation in language models
+            </a>
+            (Kirsanov et al., 2025)
+            <a
+              href="#ref-prompting-geometry"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-linear-truth-encodings">
+            <a href="https://arxiv.org/abs/2510.15804">
+              Emergence of Linear Truth Encodings in Language Models
+            </a>
+            (Bai et al., 2025)
+            <a
+              href="#ref-linear-truth-encodings"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-choi-eval">
+            <a href="https://arxiv.org/abs/2604.02485">
+              Failing to Falsify: Evaluating and Mitigating Confirmation Bias in
+              Language Models
+            </a>
+            (Jhaveri et al., 2026)
+            <a
+              href="#ref-choi-eval"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-choi-feedback">
+            <a href="https://arxiv.org/pdf/2507.23158">
+              User Feedback in Human-LLM Dialogues: A Lens to Understand Users
+              But Noisy as a Learning Signal
+            </a>
+            (Liu et al., 2025)
+            <a
+              href="#ref-choi-feedback"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-durrett-sparta">
+            <a href="https://arxiv.org/abs/2506.04721">
+              SPARTA ALIGNMENT: Collectively Aligning Multiple Language Models
+              through Combat
+            </a>
+            (Jiang et al., 2025)
+            <a
+              href="#ref-durrett-sparta"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-durrett-overton">
+            <a href="https://arxiv.org/abs/2406.17692">
+              From Distributional to Overton Pluralism: Investigating Large
+              Language Model Alignment
+            </a>
+            (Lake et al., 2025)
+            <a
+              href="#ref-durrett-overton"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-durrett-pairwise">
+            <a href="https://arxiv.org/abs/2504.14716">
+              Pairwise or Pointwise? Evaluating Feedback Protocols for Bias in
+              LLM-Based Evaluation
+            </a>
+            (Tripathi et al., 2025)
+            <a
+              href="#ref-durrett-pairwise"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-durrett-heads">
+            <a href="https://arxiv.org/abs/2410.22316">
+              Understanding Synthetic Context Extension via Retrieval Heads
+            </a>
+            (Zhao et al., 2025)
+            <a
+              href="#ref-durrett-heads"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+        </ol>
+      </section>
+    </div>
+  </body>
+</html>

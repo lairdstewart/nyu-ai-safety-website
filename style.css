@@ -1,0 +1,183 @@
+/* ---- shared ---- */
+/* Montserrat is self-hosted: same origin as this stylesheet, so the browser
+   reuses the connection it already has instead of opening two more. One file
+   covers both weights — it's the variable font, so 100 900 is the axis it
+   carries, and the browser picks 400 or 700 off it. Latin subset only; the
+   one glyph the page uses outside that range (↩) falls back to the system
+   sans, exactly as it did on Google Fonts. */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;   /* show fallback text immediately, swap when the font lands */
+  src: url("assets/montserrat-var-latin.woff2") format("woff2");
+}
+
+:root {
+  --bar-height: 4rem;
+  --nyu-violet: #57068c;
+  --rule: #ccc; /* grey hairline divider color */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---- purple bar at top of screen ---- */
+.topbar {
+  background: var(--nyu-violet);
+  height: var(--bar-height);
+  display: flex;
+  align-items: center;
+  padding-left: 1.5em;
+}
+
+/* the bar holds one link home: torch + wordmark, side by side.
+   Copy the .topbar markup verbatim into a new page. */
+.topbar a {
+  display: flex;
+  gap: 0.5em;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.topbar img {
+  height: 1.5em;               /* em => the torch tracks the wordmark's font-size, not the bar */
+  width: auto;                 /* keep the logo's own proportions */
+  display: block;              /* no inline baseline gap under the image */
+}
+
+/* ---- the nav + content grid, below the bar ---- */
+/* named areas, so each breakpoint below just redraws this little map */
+.layout {
+  padding: 1.5em 1.5em 1.5em 3em;
+  display: grid;
+  grid-template-columns: 15em minmax(0, 46em);   /* nav sits at the left; 46em caps the article's line length */
+  grid-template-areas:
+    "nav main"
+    "nav notes";                                 /* the notes always sit under the article, at every width */
+  gap: 2em;
+  counter-reset: noteref endnote;   /* the endnotes are outside <main>, so the counters have to reset here */
+}
+nav { grid-area: nav; }
+main { grid-area: main; }
+.endnotes { grid-area: notes; }
+
+/* the rule under the nav's label: the site's hairline instead of the browser's
+   2px inset default, and tucked up under the label rather than 0.5em below it */
+nav hr {
+  margin: 0.1em 0 0.5em;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+nav ul { list-style: none; margin: 0; padding: 0; }
+nav li { margin: 0.15em 0; }
+nav a, nav a:visited,
+.menu-open, .menu-open:visited { color: var(--nyu-violet); }
+nav a { text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+nav [aria-current="page"] { font-weight: bold; }
+main h1 { margin-top: 0; }                  /* line the heading up with the nav */
+
+/* the mobile-only trigger and close link, hidden on desktop */
+.menu-open, .menu-close { display: none; }
+
+/* ---- desktop: sidebar ---- */
+@media (min-width: 40em) {
+  /* column-gap only: the 2em row gap above still spaces the notes off the article */
+  .layout { column-gap: 3.5em; }
+
+  nav {
+    align-self: start;                     /* content height, so the line is exactly as tall as the nav list */
+  }
+}
+
+/* ---- mobile: full-screen menu via :target ---- */
+/* 39.99em, not 40em: max-width and min-width are both inclusive, so a shared
+   40em boundary would make this block and the desktop one apply at once. */
+@media (max-width: 39.99em) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav" "main" "notes";
+    gap: 1em;
+    padding: 1em;
+  }
+
+  /* the trigger stands in for the nav in the flow here — the nav itself is
+     either hidden or a fixed overlay, so it never occupies its own area.
+     Placed explicitly: left to auto-placement it would drift to the bottom
+     the moment anything else claimed the first row. */
+  .menu-open { grid-area: nav; }
+
+  /* same divider, two states: the trigger and the menu's own close link */
+  .menu-open, nav:target .menu-close {
+    display: block;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  nav { display: none; }
+
+  /* the overlay opens under its own "Close" divider, so a lone "Menu" label and
+     rule would only repeat it — drop both, and the list starts at the top */
+  .menu-label, nav hr { display: none; }
+
+  /* keep the purple bar pinned and above the menu overlay */
+  .topbar { position: sticky; top: 0; z-index: 20; }
+
+  nav:target {
+    display: block;
+    position: fixed;
+    inset: var(--bar-height) 0 0 0;   /* start below the bar, not over it */
+    background: #fff;
+    padding: 1em;
+    overflow-y: auto;      /* long trees must stay reachable */
+    z-index: 10;
+  }
+
+  nav li { margin: 0.5em 0; }   /* larger tap targets */
+}
+
+/* ---- endnotes ---- */
+/* Both numerals are generated, so document order is the only source of truth:
+   the refs count up through the prose, the notes count down the list, and the
+   two can't drift apart the way hand-typed numbers do. The counters are reset
+   on .layout, up with the grid, since .endnotes sits outside <main>. */
+/* the ref is one <a>: no <sup>, since role="doc-noteref" carries that meaning,
+   and no wrapper — the id lives on the anchor, which is all the backlink needs */
+.noteref {
+  counter-increment: noteref;
+  vertical-align: super;
+  font-size: 0.75em;
+}
+/* the link's only content, so the brackets and numeral are all click target.
+   The brackets are what let two notes on one word read as "[4][5]" rather than
+   "45" — no separator between them, so the refs need nothing wrapped around them */
+.noteref::after { content: "[" counter(noteref) "]"; }
+
+/* stacked under the article: the hairline runs across the top, and the grid's
+   own 2em row gap does the spacing */
+.endnotes {
+  padding-top: 1em;
+  border-top: 1px solid var(--rule);   /* same hairline as the nav divider */
+}
+.endnotes ol { list-style: none; padding-left: 0; }   /* the counter numbers these, not the list marker */
+.endnotes li { counter-increment: endnote; margin-bottom: 0.5em; }
+.endnotes li::before { content: counter(endnote) ". "; }
+
+/* mark whichever end of the jump you were sent to — the note going down, the
+   numeral coming back up — so the eye lands on it without hunting the paragraph.
+   Only one :target exists at a time, so the old highlight clears itself. */
+/* NYU brand yellow accent color (#f4ec51) with 40% opacity equivalent */
+.endnotes li:target,
+.noteref:target { background: #f4ec5166; }
+
+/* under 40em the topbar is sticky, so an un-offset jump parks the target under it.
+   main h2 is here for links to a section's own id, e.g. resources.html#profs. */
+.noteref, .endnotes li, main h2 { scroll-margin-top: calc(var(--bar-height) + 1em); }
