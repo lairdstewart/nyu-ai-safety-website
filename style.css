@@ -88,7 +88,7 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
 .menu-open, .menu-close { display: none; }
 
 /* ---- desktop: sidebar ---- */
-/* 48em, not less: the sidebar + gaps cost a fixed 368px, so below this the
+/* 48em, not less: the sidebar + gaps cost a fixed 360px, so below this the
    article drops under ~45 characters a line. The mobile layout is wider at
    every viewport, so switching later only helps the measure. */
 @media (min-width: 48em) {
