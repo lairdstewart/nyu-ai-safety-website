@@ -225,7 +225,7 @@
             <a href="https://cims.nyu.edu/~bruna/bio/">Joan Bruna</a>. Mostly
             deep learning theory. One interpretability paper<a
               class="noteref"
-              id="ref-linear-truth-encodings"
+              id="ref-linear-truth-encodings-1"
               href="#note-linear-truth-encodings"
               role="doc-noteref"
             ></a
@@ -423,11 +423,16 @@
               role="doc-noteref"
             ></a
             ><a
-              class="noteref"
-              id="ref-linear-truth-encodings"
               href="#note-linear-truth-encodings"
-              role="doc-noteref"
-            ></a>
+              id="ref-linear-truth-encodings-2"
+              style="vertical-align: super; font-size: 0.75em"
+              >[16]</a
+            >
+            <!--
+              Note above is a hacky solution for having two profs link to the
+              same paper. Brittle since the number is hard-coded, but simpler
+              than adding a pre-processing step for now ...
+            -->
             and introspection<a
               class="noteref"
               id="ref-linzen-introspect"
@@ -436,7 +441,6 @@
             ></a
             >.
           </li>
-          <!-- todo: how to have two link to the same number so the return link goes to where the click initiated from? -->
         </ul>
         Safety-adjacent work
         <ul>
@@ -467,78 +471,26 @@
            names, not numbers, so links survive reordering. -->
       <section class="endnotes" role="doc-endnotes">
         <ol>
-          <li id="note-alignment-distillation">
-            <a href="https://arxiv.org/abs/2509.23667v1">
-              Why Alignment Must Precede Distillation: A Minimal Working
-              Explanation
+          <li id="note-izmailov-reasoning">
+            <a href="https://arxiv.org/abs/2607.16097">
+              Understanding Reasoning from Pretraining to Post-Training
             </a>
-            (Cha &amp; Cho, 2025)
+            (Shen et al., 2026)
             <a
-              href="#ref-alignment-distillation"
+              href="#ref-izmailov-reasoning"
               role="doc-backlink"
               aria-label="Back to reference"
               >↩</a
             >
           </li>
-          <li id="note-unlearning-metrics">
-            <a href="https://arxiv.org/abs/2510.12981">
-              Reference-Specific Unlearning Metrics Can Hide the Truth: A
-              Reality Check
+          <li id="note-izmailov-generalization">
+            <a href="https://arxiv.org/abs/2312.09390">
+              Weak-to-Strong Generalization: Eliciting Strong Capabilities With
+              Weak Supervision
             </a>
-            (Cho et al., 2025)
+            (Burns et al., 2023)
             <a
-              href="#ref-unlearning-metrics"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-prompting-geometry">
-            <a href="https://arxiv.org/abs/2502.08009">
-              The geometry of prompting: Unveiling distinct mechanisms of task
-              adaptation in language models
-            </a>
-            (Kirsanov et al., 2025)
-            <a
-              href="#ref-prompting-geometry"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-linear-truth-encodings">
-            <a href="https://arxiv.org/abs/2510.15804">
-              Emergence of Linear Truth Encodings in Language Models
-            </a>
-            (Bai et al., 2025)
-            <a
-              href="#ref-linear-truth-encodings"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-choi-eval">
-            <a href="https://arxiv.org/abs/2604.02485">
-              Failing to Falsify: Evaluating and Mitigating Confirmation Bias in
-              Language Models
-            </a>
-            (Jhaveri et al., 2026)
-            <a
-              href="#ref-choi-eval"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-choi-feedback">
-            <a href="https://arxiv.org/pdf/2507.23158">
-              User Feedback in Human-LLM Dialogues: A Lens to Understand Users
-              But Noisy as a Learning Signal
-            </a>
-            (Liu et al., 2025)
-            <a
-              href="#ref-choi-feedback"
+              href="#ref-izmailov-generalization"
               role="doc-backlink"
               aria-label="Back to reference"
               >↩</a
@@ -595,26 +547,162 @@
               >↩</a
             >
           </li>
-          <li id="#note-izmailov-reasoning">
-            <a href="https://arxiv.org/abs/2607.16097">
-              Understanding Reasoning from Pretraining to Post-Training
-            </a>
-            (Shen et al., 2026)
+          <li id="note-lei-weak">
             <a
-              href="#ref-izmailov-reasoning"
+              href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/375a22d76e1c7d30c42bca9be47aab76-Abstract-Conference.html"
+            >
+              Does Weak-to-strong Generalization Happen under Spurious
+              Correlations?
+            </a>
+            (Liu, et al., 2026)
+            <a
+              href="#ref-lei-weak"
               role="doc-backlink"
               aria-label="Back to reference"
               >↩</a
             >
           </li>
-          <li id="#note-izmailov-generalization">
-            <a href="https://arxiv.org/abs/2312.09390">
-              Weak-to-Strong Generalization: Eliciting Strong Capabilities With
-              Weak Supervision
+          <li id="note-lei-shift">
+            <a href="https://arxiv.org/abs/2505.22829">
+              Bridging Distribution Shift and AI Safety: Conceptual and
+              Methodological Synergies
             </a>
-            (Burns et al., 2023)
+            (Liu, et al., 2026)
             <a
-              href="#ref-izmailov-generalization"
+              href="#ref-lei-shift"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-lei-safeguard">
+            <a href="https://arxiv.org/abs/2510.01270">
+              Think Twice, Generate Once: Safeguarding by Progressive
+              Self-Reflection
+            </a>
+            (Phan, et al., 2025)
+            <a
+              href="#ref-lei-safeguard"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-hehe-rlhf">
+            <a href="https://arxiv.org/pdf/2409.12822">
+              Language Models Learn To Mislead Humans via RLHF
+            </a>
+            (Wen et al., 2024)
+            <a
+              href="#ref-hehe-rlhf"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-hehe-untrusted">
+            <a href="https://arxiv.org/pdf/2411.17693">
+              Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats
+            </a>
+            (Wen et al., 2024)
+            <a
+              href="#ref-hehe-untrusted"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-hehe-monitor">
+            <a href="https://arxiv.org/abs/2506.10949">
+              Monitoring Decomposition Attacks in LLMs with Lightweight
+              Sequential Monitors
+            </a>
+            (Yueh-Han et al., 2025)
+            <a
+              href="#ref-hehe-monitor"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-alignment-distillation">
+            <a href="https://arxiv.org/abs/2509.23667v1">
+              Why Alignment Must Precede Distillation: A Minimal Working
+              Explanation
+            </a>
+            (Cha &amp; Cho, 2025)
+            <a
+              href="#ref-alignment-distillation"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-unlearning-metrics">
+            <a href="https://arxiv.org/abs/2510.12981">
+              Reference-Specific Unlearning Metrics Can Hide the Truth: A
+              Reality Check
+            </a>
+            (Cho et al., 2025)
+            <a
+              href="#ref-unlearning-metrics"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-prompting-geometry">
+            <a href="https://arxiv.org/abs/2502.08009">
+              The geometry of prompting: Unveiling distinct mechanisms of task
+              adaptation in language models
+            </a>
+            (Kirsanov et al., 2025)
+            <a
+              href="#ref-prompting-geometry"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-linear-truth-encodings">
+            <a href="https://arxiv.org/abs/2510.15804">
+              Emergence of Linear Truth Encodings in Language Models
+            </a>
+            (Bai et al., 2025)
+            <a
+              href="#ref-linear-truth-encodings-1"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+            <a
+              href="#ref-linear-truth-encodings-2"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-choi-eval">
+            <a href="https://arxiv.org/abs/2604.02485">
+              Failing to Falsify: Evaluating and Mitigating Confirmation Bias in
+              Language Models
+            </a>
+            (Jhaveri et al., 2026)
+            <a
+              href="#ref-choi-eval"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-choi-feedback">
+            <a href="https://arxiv.org/pdf/2507.23158">
+              User Feedback in Human-LLM Dialogues: A Lens to Understand Users
+              But Noisy as a Learning Signal
+            </a>
+            (Liu et al., 2025)
+            <a
+              href="#ref-choi-feedback"
               role="doc-backlink"
               aria-label="Back to reference"
               >↩</a
@@ -634,14 +722,14 @@
               >↩</a
             >
           </li>
-          <li id="note-jacot-theory">
+          <li id="note-jacot-frequencies">
             <a href="https://arxiv.org/abs/2402.08010">
               Which Frequencies do CNNs Need? Emergent Bottleneck Structure in
               Feature Learning
             </a>
             (Wen, Jacot, 2026)
             <a
-              href="#ref-jacot-frequency"
+              href="#ref-jacot-frequencies"
               role="doc-backlink"
               aria-label="Back to reference"
               >↩</a
@@ -863,60 +951,6 @@
               >↩</a
             >
           </li>
-          <li id="note-karri-unlearn">
-            <a href="https://ieeexplore.ieee.org/abstract/document/11189152">
-              SALAD: Systematic Assessment of Machine Unlearning on LLM-Aided
-              Hardware Design
-            </a>
-            (Wang, et al., 2025)
-            <a
-              href="#ref-karri-unlearn"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-lei-weak">
-            <a
-              href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/375a22d76e1c7d30c42bca9be47aab76-Abstract-Conference.html"
-            >
-              Does Weak-to-strong Generalization Happen under Spurious
-              Correlations?
-            </a>
-            (Liu, et al., 2026)
-            <a
-              href="#ref-lei-weak"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-lei-shift">
-            <a href="https://arxiv.org/abs/2505.22829">
-              Bridging Distribution Shift and AI Safety: Conceptual and
-              Methodological Synergies
-            </a>
-            (Liu, et al., 2026)
-            <a
-              href="#ref-lei-shift"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-lei-safeguard">
-            <a href="https://arxiv.org/abs/2510.01270">
-              Think Twice, Generate Once: Safeguarding by Progressive
-              Self-Reflection
-            </a>
-            (Phan, et al., 2025)
-            <a
-              href="#ref-lei-safeguard"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
           <li id="note-kamath-poison">
             <a href="https://arxiv.org/abs/2606.04929">
               Sequential Data Poisoning in LLM Post-Training
@@ -929,7 +963,7 @@
               >↩</a
             >
           </li>
-          <li id="note-kamath-unlearn">
+          <li id="note-kamath-unlearning">
             <a
               href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/7e810b2c75d69be186cadd2fe3febeab-Abstract-Conference.html"
             >
@@ -937,44 +971,7 @@
             </a>
             (Pawelczyk, et al., 2025)
             <a
-              href="#ref-kamath-unlearn"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-hehe-rlhf">
-            <a href="https://arxiv.org/pdf/2409.12822">
-              Language Models Learn To Mislead Humans via RLHF
-            </a>
-            (Wen et al., 2024)
-            <a
-              href="#ref-hehe-rlhf"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-hehe-untrusted">
-            <a href="https://arxiv.org/pdf/2411.17693">
-              Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats
-            </a>
-            (Wen et al., 2024)
-            <a
-              href="#ref-hehe-untrusted"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-hehe-monitoring">
-            <a href="https://arxiv.org/abs/2506.10949">
-              Monitoring Decomposition Attacks in LLMs with Lightweight
-              Sequential Monitors
-            </a>
-            (Yueh-Han et al., 2025)
-            <a
-              href="#ref-hehe-monitoring"
+              href="#ref-kamath-unlearning"
               role="doc-backlink"
               aria-label="Back to reference"
               >↩</a
