@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Safety in NYC — NYU AI Safety Association</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/nyu-logo.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a
+        class="wordmark"
+        href="index.html"
+        aria-label="NYU AI Safety Association"
+      >
+        <svg
+          class="torch"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 14.747168 26.373552"
+          width="14.747168"
+          height="26.373552"
+          fill="#fff"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <g transform="translate(-10.624803,-5.6562956)">
+            <path
+              d="m 16.7536,31.791666 c 0.04227,0.2526 0.588533,0.37656 0.710933,0 l 1.2584,-9.972333 h -3.0568 z"
+            />
+            <path d="M 19.7912,21.097333 V 19.586 h -5.195334 v 1.511333 z" />
+            <path
+              d="m 18.292666,18.847333 c 6.587067,0.238667 7.0532,-5.764 7.0792,-8.0104 0.0031,-0.130133 -0.06253,-0.1416 -0.09373,-0.05053 -0.195334,0.4688 -1.0516,2.1428 -3.426534,3.160533 -2.120933,0.909867 -3.396399,2.9744 -3.618799,4.8296 -0.0099,0.04587 0.0292,0.0708 0.05987,0.0708 z"
+            />
+            <path
+              d="m 17.569333,18.4136 c 1.042133,-4.998534 5.1104,-5.1204 5.4744,-6.0688 0.567733,-1.4792 -0.471334,-4.1041335 -0.736934,-4.4145335 -0.0256,-0.033333 -0.06253,-0.012 -0.0756,0.0156 -0.551466,1.2109333 -1.445733,2.3639995 -2.0984,2.8937335 -0.923466,0.743733 -4.457333,3.363066 -2.649999,7.5776 0.0208,0.05213 0.074,0.03907 0.08653,-0.0036 z"
+            />
+            <path
+              d="m 16.850533,18.614 c -2.205733,-4.7124 2.206267,-7.756134 2.924933,-8.416134 0.1016,-0.09267 0.07613,-0.178133 0.07813,-0.2838662 0,-1.4837333 -0.85,-3.8842666 -1.128534,-4.2275999 -0.03907,-0.053067 -0.0724,-0.030133 -0.08867,0.023467 -0.376534,1.4625333 -2.384267,3.6422666 -2.789067,4.1193333 -3.406187,4.0499998 -2.626507,6.5161328 0.929733,8.8421328 0.04533,0.02867 0.1,-0.0041 0.07347,-0.05733 z"
+            />
+            <path
+              d="m 15.8636,18.776533 c -3.68964,-2.2016 -3.320374,-5.345867 -1.7912,-7.6568 0.0328,-0.0484 0.0432,-0.129067 0.0328,-0.2228 -0.064,-0.5496 -0.6636,-1.9401332 -0.914054,-2.3182665 -0.06407,-0.095867 -0.118746,-0.088 -0.125,-0.019867 -0.02031,0.6286666 -0.735933,2.2042665 -1.831253,4.0188005 -1.164067,1.9312 -1.166667,6.1224 4.61244,6.286 0.05533,0.0015 0.07093,-0.05533 0.01627,-0.08707 z"
+            />
+          </g>
+        </svg>
+        <span
+          >NYU AI Safety<span class="wordmark-tail"> Association</span></span
+        >
+      </a>
+      <a class="menu-open" href="#menu" aria-label="Open menu"></a>
+      <a class="menu-close" href="#" aria-label="Close menu"></a>
+    </header>
+
+    <div class="layout">
+      <nav id="menu">
+        <a class="menu-close" href="#">Close</a>
+        <ul>
+          <li><a href="index.html">About us</a></li>
+          <li>
+            <a href="programming.html">Programming</a>
+          </li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li>
+            Resources
+            <ul>
+              <li>
+                <a href="what-is-ai-safety.html">What is AI Safety?</a>
+              </li>
+              <li>
+                <a href="related-orgs.html">NYC Organizations</a>
+              </li>
+              <li>
+                <a href="related-profs.html" aria-current="page"
+                  >NYU Professors</a
+                >
+              </li>
+              <li>
+                <a href="bulletin.html">Bulletin board</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <h1 id="profs">Related Professors at NYU</h1>
+        <p>
+          <i
+            >A collection of related professors. Inclusion does not imply an
+            affiliation with the association. To suggest an addition, please
+            email
+            <a href="mailto:nyuaisafety@gmail.com">nyuaisafety@gmail.com</a>.
+          </i>
+        </p>
+        <!--
+          Professors I've intentionally left out:
+          - Shauli Ravfogel (on job market for 26/27)
+          - Brendan Dolan-Gavitt (no longer at NYU)
+          - Florentin Guth (back to europe)
+        -->
+        Substantial safety focus
+        <ul>
+          <li>
+            <a href="https://izmailovpavel.github.io/">Pavel Izmailov</a>.
+            Reinforcement learning, reasoning<a
+              class="noteref"
+              id="ref-izmailov-reasoning"
+              href="#note-izmailov-reasoning"
+              role="doc-noteref"
+            ></a
+            >, and alignment
+            <a
+              class="noteref"
+              id="ref-izmailov-generalization"
+              href="#note-izmailov-generalization"
+              role="doc-noteref"
+            ></a
+            >. Researcher at Anthropic, formerly OpenAI superalignment.
+          </li>
+          <li>
+            <a href="https://gregdurrett.github.io/#research">Greg Durrett</a>.
+            NLP and machine learning. Many papers on alignment<a
+              class="noteref"
+              id="ref-durrett-sparta"
+              href="#note-durrett-sparta"
+              role="doc-noteref"
+            ></a
+            ><a
+              class="noteref"
+              id="ref-durrett-overton"
+              href="#note-durrett-overton"
+              role="doc-noteref"
+            ></a
+            ><a
+              class="noteref"
+              id="ref-durrett-pairwise"
+              href="#note-durrett-pairwise"
+              role="doc-noteref"
+            ></a>
+            and interpretability<a
+              class="noteref"
+              id="ref-durrett-heads"
+              href="#note-durrett-heads"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://cecilialeiqi.github.io/">Qi Lei</a>. Weak-to-strong
+            generalization<a
+              class="noteref"
+              id="ref-lei-weak"
+              href="#note-lei-weak"
+              role="doc-noteref"
+            ></a
+            >, distribution shift<a
+              class="noteref"
+              id="ref-lei-shift"
+              href="#note-lei-shift"
+              role="doc-noteref"
+            ></a
+            >, and inference-time safeguards
+            <a
+              class="noteref"
+              id="ref-lei-safeguard"
+              href="#note-lei-safeguard"
+              role="doc-noteref"
+            ></a
+            >. Google DeepMind faculty.
+          </li>
+          <li>
+            <a href="https://hhexiy.ai/">He He</a>. Reward hacking
+            <a
+              class="noteref"
+              id="ref-hehe-rlhf"
+              href="#note-hehe-rlhf"
+              role="doc-noteref"
+            ></a
+            >, control
+            <a
+              class="noteref"
+              id="ref-hehe-untrusted"
+              href="#note-hehe-untrusted"
+              role="doc-noteref"
+            ></a
+            >, and monitoring
+            <a
+              class="noteref"
+              id="ref-hehe-monitor"
+              href="#note-hehe-monitor"
+              role="doc-noteref"
+            ></a
+            >. (On sabbatical fall '27)
+          </li>
+          <li>
+            <a href="https://sleepinyourhat.github.io/">Sam Bowman</a>.
+            Alignment. Anthropic. (Long-term leave)
+          </li>
+        </ul>
+        Primary focus in other areas, occasional safety work
+        <ul>
+          <li>
+            <a href="https://kyunghyuncho.me/">Kyunghyun Cho</a>. Mainly focuses
+            on AI for biology and medicine, but has published on alignment<a
+              class="noteref"
+              id="ref-alignment-distillation"
+              href="#note-alignment-distillation"
+              role="doc-noteref"
+            ></a
+            >, unlearning<a
+              class="noteref"
+              id="ref-unlearning-metrics"
+              href="#note-unlearning-metrics"
+              role="doc-noteref"
+            ></a
+            >, and interpretability<a
+              class="noteref"
+              id="ref-prompting-geometry"
+              href="#note-prompting-geometry"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://cims.nyu.edu/~bruna/bio/">Joan Bruna</a>. Mostly
+            deep learning theory. One interpretability paper<a
+              class="noteref"
+              id="ref-linear-truth-encodings"
+              href="#note-linear-truth-encodings"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://eunsol.github.io">Eunsol Choi</a>. Partial focus on
+            continual learning. Papers on LLM behavioral evaluation<a
+              class="noteref"
+              id="ref-choi-eval"
+              href="#note-choi-eval"
+              role="doc-noteref"
+            ></a>
+            and implicit user feedback for training<a
+              class="noteref"
+              id="ref-choi-feedback"
+              href="#note-choi-feedback"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://sites.google.com/view/arthurjacot/">Arthur Jacot</a
+            >. Deep learning theory
+            <a
+              class="noteref"
+              id="ref-jacot-curse"
+              href="#note-jacot-curse"
+              role="doc-noteref"
+            ></a
+            ><a
+              class="noteref"
+              id="ref-jacot-frequencies"
+              href="#note-jacot-frequencies"
+              role="doc-noteref"
+            ></a
+            >, learning mechanics
+            <a
+              class="noteref"
+              id="ref-jacot-theory"
+              href="#note-jacot-theory"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://mengyeren.com/">Mengye Ren</a>. Mostly
+            representation and continual learning. Papers on scaleable
+            oversight<a
+              class="noteref"
+              id="ref-ren-oversight"
+              href="#note-ren-oversight"
+              role="doc-noteref"
+            ></a>
+            and forecast calibration<a
+              class="noteref"
+              id="ref-ren-calibration"
+              href="#note-ren-calibration"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://cims.nyu.edu/~kempe/">Julia Kempe</a>. Some work on
+            alignment<a
+              class="noteref"
+              id="ref-kempe-alignment"
+              href="#note-kempe-alignment"
+              role="doc-noteref"
+            ></a
+            >, mechanistic interpretability<a
+              class="noteref"
+              id="ref-kempe-interpretability"
+              href="#note-kempe-interpretability"
+              role="doc-noteref"
+            ></a
+            >, and hallucination detection<a
+              class="noteref"
+              id="ref-kempe-hallucination"
+              href="#note-kempe-hallucination"
+              role="doc-noteref"
+            ></a
+            >. Director of research at AmiLabs.
+          </li>
+          <li>
+            <a href="https://chinmayhegde.github.io/pubs/">Chinmay Hegde </a>.
+            Red-team jailbreaking<a
+              class="noteref"
+              id="ref-hegde-jailbreak"
+              href="#note-hegde-jailbreak"
+              role="doc-noteref"
+            ></a>
+            and unlearning
+            <a
+              class="noteref"
+              id="ref-hegde-unlearning"
+              href="#note-hegde-unlearning"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://wp.nyu.edu/ensure_group/pi/">Siddharth Garg </a>.
+            Red-team jailbreaking<a
+              class="noteref"
+              id="ref-garg-jailbreak"
+              href="#note-garg-jailbreak"
+              role="doc-noteref"
+            ></a
+            ><a
+              class="noteref"
+              id="ref-garg-jailbreak2"
+              href="#note-garg-jailbreak2"
+              role="doc-noteref"
+            ></a>
+            and interpretability of insecure code generation<a
+              class="noteref"
+              id="ref-garg-interp"
+              href="#note-garg-interp"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://cims.nyu.edu/~andrewgw/">Andrew Gordon Wilson</a>.
+            Mostly theory of deep learning, but has touched out-of-distribution
+            detection<a
+              class="noteref"
+              id="ref-wilson-ood"
+              href="#note-wilson-ood"
+              role="doc-noteref"
+            ></a>
+            and hallucination detection<a
+              class="noteref"
+              id="ref-wilson-halluciation"
+              href="#note-wilson-halluciation"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://cims.nyu.edu/~rajeshr/">Rajesh Ranganath</a>.
+            Quantifying tail-risk of LLM outputs<a
+              class="noteref"
+              id="ref-ranganath-tail"
+              href="#note-ranganath-tail"
+              role="doc-noteref"
+            ></a>
+            and explanation faithfulness<a
+              class="noteref"
+              id="ref-ranganath-faithfulness"
+              href="#note-ranganath-faithfulness"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://engineering.nyu.edu/faculty/ramesh-karri"
+              >Ramesh Karri</a
+            >. Security and trust for hardware, lately encompassing LLMs. Recent
+            papers on jailbreak benchmarking<a
+              class="noteref"
+              id="ref-karri-benchmark"
+              href="#note-karri-benchmark"
+              role="doc-noteref"
+            ></a>
+            and unlearning<a
+              class="noteref"
+              id="ref-karri-unlearn"
+              href="#note-karri-unlearn"
+              role="doc-noteref"
+            ></a>
+          </li>
+          <li>
+            <a href="http://www.gautamkamath.com/">Gautam Kamath</a>. Mostly
+            differential privacy, but has published on data poisoning<a
+              class="noteref"
+              id="ref-kamath-poison"
+              href="#note-kamath-poison"
+              role="doc-noteref"
+            ></a>
+            and unlearning<a
+              class="noteref"
+              id="ref-kamath-unlearning"
+              href="#note-kamath-unlearning"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <li>
+            <a href="https://tallinzen.net/">Tal Linzen</a>. Interpretability<a
+              class="noteref"
+              id="ref-linzen-context"
+              href="#note-linzen-context"
+              role="doc-noteref"
+            ></a
+            ><a
+              class="noteref"
+              id="ref-linear-truth-encodings"
+              href="#note-linear-truth-encodings"
+              role="doc-noteref"
+            ></a>
+            and introspection<a
+              class="noteref"
+              id="ref-linzen-introspect"
+              href="#note-linzen-introspect"
+              role="doc-noteref"
+            ></a
+            >.
+          </li>
+          <!-- todo: how to have two link to the same number so the return link goes to where the click initiated from? -->
+        </ul>
+        Safety-adjacent work
+        <ul>
+          <li>
+            <a href="https://emblack.github.io/">Emily Black</a>. Algorithmic
+            fairness and discrimination.
+          </li>
+          <li>
+            <a href="https://airesponsibly.net/people/julia/"
+              >Julia Stoyanovich</a
+            >. Responsible AI.
+          </li>
+          <li>
+            <a href="https://pratyushasharma.github.io/">Pratyusha Sharma</a>.
+          </li>
+          <li>
+            <a href="https://www.eugenevinitsky.com/">Eugene Vinitsky</a>. RL,
+            agents, transportation.
+          </li>
+        </ul>
+      </main>
+
+      <!-- ENDNOTES: a sibling of <main>, not a child, so the grid places it in
+           its own row below the article, clear of the article's own width.
+           The visible numerals come from CSS counters, so the order of these
+           <li> is the only thing that sets them. Add or reorder a note and
+           everything renumbers itself; never type a number here. The ids are
+           names, not numbers, so links survive reordering. -->
+      <section class="endnotes" role="doc-endnotes">
+        <ol>
+          <li id="note-alignment-distillation">
+            <a href="https://arxiv.org/abs/2509.23667v1">
+              Why Alignment Must Precede Distillation: A Minimal Working
+              Explanation
+            </a>
+            (Cha &amp; Cho, 2025)
+            <a
+              href="#ref-alignment-distillation"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-unlearning-metrics">
+            <a href="https://arxiv.org/abs/2510.12981">
+              Reference-Specific Unlearning Metrics Can Hide the Truth: A
+              Reality Check
+            </a>
+            (Cho et al., 2025)
+            <a
+              href="#ref-unlearning-metrics"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-prompting-geometry">
+            <a href="https://arxiv.org/abs/2502.08009">
+              The geometry of prompting: Unveiling distinct mechanisms of task
+              adaptation in language models
+            </a>
+            (Kirsanov et al., 2025)
+            <a
+              href="#ref-prompting-geometry"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-linear-truth-encodings">
+            <a href="https://arxiv.org/abs/2510.15804">
+              Emergence of Linear Truth Encodings in Language Models
+            </a>
+            (Bai et al., 2025)
+            <a
+              href="#ref-linear-truth-encodings"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-choi-eval">
+            <a href="https://arxiv.org/abs/2604.02485">
+              Failing to Falsify: Evaluating and Mitigating Confirmation Bias in
+              Language Models
+            </a>
+            (Jhaveri et al., 2026)
+            <a
+              href="#ref-choi-eval"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-choi-feedback">
+            <a href="https://arxiv.org/pdf/2507.23158">
+              User Feedback in Human-LLM Dialogues: A Lens to Understand Users
+              But Noisy as a Learning Signal
+            </a>
+            (Liu et al., 2025)
+            <a
+              href="#ref-choi-feedback"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-durrett-sparta">
+            <a href="https://arxiv.org/abs/2506.04721">
+              SPARTA ALIGNMENT: Collectively Aligning Multiple Language Models
+              through Combat
+            </a>
+            (Jiang et al., 2025)
+            <a
+              href="#ref-durrett-sparta"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-durrett-overton">
+            <a href="https://arxiv.org/abs/2406.17692">
+              From Distributional to Overton Pluralism: Investigating Large
+              Language Model Alignment
+            </a>
+            (Lake et al., 2025)
+            <a
+              href="#ref-durrett-overton"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-durrett-pairwise">
+            <a href="https://arxiv.org/abs/2504.14716">
+              Pairwise or Pointwise? Evaluating Feedback Protocols for Bias in
+              LLM-Based Evaluation
+            </a>
+            (Tripathi et al., 2025)
+            <a
+              href="#ref-durrett-pairwise"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-durrett-heads">
+            <a href="https://arxiv.org/abs/2410.22316">
+              Understanding Synthetic Context Extension via Retrieval Heads
+            </a>
+            (Zhao et al., 2025)
+            <a
+              href="#ref-durrett-heads"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="#note-izmailov-reasoning">
+            <a href="https://arxiv.org/abs/2607.16097">
+              Understanding Reasoning from Pretraining to Post-Training
+            </a>
+            (Shen et al., 2026)
+            <a
+              href="#ref-izmailov-reasoning"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="#note-izmailov-generalization">
+            <a href="https://arxiv.org/abs/2312.09390">
+              Weak-to-Strong Generalization: Eliciting Strong Capabilities With
+              Weak Supervision
+            </a>
+            (Burns et al., 2023)
+            <a
+              href="#ref-izmailov-generalization"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-jacot-curse">
+            <a
+              href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/b9523d484af624986c2e0c630ac44ecb-Abstract-Conference.html"
+            >
+              How DNNs break the Curse of Dimensionality
+            </a>
+            (Jacot et al., 2025)
+            <a
+              href="#ref-jacot-curse"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-jacot-theory">
+            <a href="https://arxiv.org/abs/2402.08010">
+              Which Frequencies do CNNs Need? Emergent Bottleneck Structure in
+              Feature Learning
+            </a>
+            (Wen, Jacot, 2026)
+            <a
+              href="#ref-jacot-frequency"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-jacot-theory">
+            <a href="https://arxiv.org/abs/2604.21691">
+              There Will Be a Scientific Theory of Deep Learning
+            </a>
+            (Simon et al., 2026)
+            <a
+              href="#ref-jacot-theory"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-ren-oversight">
+            <a href="https://arxiv.org/abs/2512.02304">
+              When Does Verification Pay Off? A Closer Look at LLMs as Solution
+              Verifiers
+            </a>
+            (Lu et al., 2025)
+            <a
+              href="#ref-ren-oversight"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-ren-calibration">
+            <a href="https://arxiv.org/abs/2605.27668">
+              Aligning LLMs with Human Uncertainty: A Beta-Bernoulli Calibrator
+              for LLM Forecasting
+            </a>
+            (Dai et al., 2026)
+            <a
+              href="#ref-ren-calibration"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-kempe-alignment">
+            <a href="https://arxiv.org/abs/2502.04270">
+              PILAF: Optimal Human Preference Sampling for Reward Modeling
+            </a>
+            (Feng et al., 2025)
+            <a
+              href="#ref-kempe-alignment"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-kempe-interpretability">
+            <a
+              href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/2b25c39788e5cf11d3541de433ebf4c0-Abstract-Conference.html"
+            >
+              From Concepts to Components: Concept-Agnostic Attention Module
+              Discovery in Transformers
+            </a>
+            (Su et al., 2026)
+            <a
+              href="#ref-kempe-interpretability"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-kempe-hallucination">
+            <a href="https://arxiv.org/abs/2510.21891">
+              Embedding Trust: Semantic Isotropy Predicts Nonfactuality in
+              Long-Form Text Generation
+            </a>
+            (Bhardwaj, et al., 2026)
+            <a
+              href="#ref-kempe-hallucination"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-hegde-jailbreak">
+            <a href="https://arxiv.org/abs/2601.02670">
+              Break Me If You Can: Self-Jailbreaking of Aligned LLMs via Lexical
+              Insertion Prompting
+            </a>
+            (Kulshreshtha, et al., 2026)
+            <a
+              href="#ref-hegde-jailbreak"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-hegde-unlearning">
+            <a href="https://arxiv.org/abs/2505.17013">
+              When Are Concepts Erased From Diffusion Models?
+            </a>
+            (Lu, et al., 2025)
+            <a
+              href="#ref-hegde-unlearning"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-garg-jailbreak">
+            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/41058">
+              MetaCipher: A Time-Persistent and Universal Multi-Agent Framework
+              for Cipher-Based Jailbreak Attacks for LLMs
+            </a>
+            (Chen, et al., 2026)
+            <a
+              href="#ref-garg-jailbreak"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-garg-jailbreak2">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10891759">
+              Detecting All-to-One Backdoor Attacks in Black-Box DNNs via
+              Differential Robustness to Noise
+            </a>
+            (Fu, et al., 2025)
+            <a
+              href="#ref-garg-jailbreak2"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-garg-interp">
+            <a href="https://arxiv.org/abs/2604.16697">
+              Surgical Repair of Insecure Code Generation in LLMs
+            </a>
+            (Sandoval, et al., 2026)
+            <a
+              href="#ref-garg-interp"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-wilson-ood">
+            <a href="https://arxiv.org/abs/2507.01831">
+              Out-of-Distribution Detection Methods Answer the Wrong Questions
+            </a>
+            (Li, et al., 2025)
+            <a
+              href="#ref-wilson-ood"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-wilson-halluciation">
+            <a href="https://arxiv.org/abs/2605.26366">
+              Automatic Layer Selection for Hallucination Detection
+            </a>
+            (Wang, et al., 2026)
+            <a
+              href="#ref-wilson-halluciation"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-ranganath-tail">
+            <a href="https://arxiv.org/abs/2604.22167">
+              Estimating Tail Risks in Language Model Output Distributions
+            </a>
+            (Angell, et al., 2026)
+            <a
+              href="#ref-ranganath-tail"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-ranganath-faithfulness">
+            <a href="https://arxiv.org/abs/2606.28615">
+              What LLMs explain is not what they believe: Evaluating explanation
+              sufficiency under models' own input beliefs
+            </a>
+            (Nguyen, et al., 2026)
+            <a
+              href="#ref-ranganath-faithfulness"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-karri-benchmark">
+            <a href="https://arxiv.org/abs/2604.17093">
+              HarmChip: Evaluating Hardware Security Centric LLM Safety via
+              Jailbreak Benchmarking
+            </a>
+            (Wang, et al., 2026)
+            <a
+              href="#ref-karri-benchmark"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-karri-unlearn">
+            <a href="https://ieeexplore.ieee.org/abstract/document/11189152">
+              SALAD: Systematic Assessment of Machine Unlearning on LLM-Aided
+              Hardware Design
+            </a>
+            (Wang, et al., 2025)
+            <a
+              href="#ref-karri-unlearn"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-karri-unlearn">
+            <a href="https://ieeexplore.ieee.org/abstract/document/11189152">
+              SALAD: Systematic Assessment of Machine Unlearning on LLM-Aided
+              Hardware Design
+            </a>
+            (Wang, et al., 2025)
+            <a
+              href="#ref-karri-unlearn"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-lei-weak">
+            <a
+              href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/375a22d76e1c7d30c42bca9be47aab76-Abstract-Conference.html"
+            >
+              Does Weak-to-strong Generalization Happen under Spurious
+              Correlations?
+            </a>
+            (Liu, et al., 2026)
+            <a
+              href="#ref-lei-weak"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-lei-shift">
+            <a href="https://arxiv.org/abs/2505.22829">
+              Bridging Distribution Shift and AI Safety: Conceptual and
+              Methodological Synergies
+            </a>
+            (Liu, et al., 2026)
+            <a
+              href="#ref-lei-shift"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-lei-safeguard">
+            <a href="https://arxiv.org/abs/2510.01270">
+              Think Twice, Generate Once: Safeguarding by Progressive
+              Self-Reflection
+            </a>
+            (Phan, et al., 2025)
+            <a
+              href="#ref-lei-safeguard"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-kamath-poison">
+            <a href="https://arxiv.org/abs/2606.04929">
+              Sequential Data Poisoning in LLM Post-Training
+            </a>
+            (Sanderson, et al., 2026)
+            <a
+              href="#ref-kamath-poison"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-kamath-unlearn">
+            <a
+              href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/7e810b2c75d69be186cadd2fe3febeab-Abstract-Conference.html"
+            >
+              Machine Unlearning Fails to Remove Data Poisoning Attacks
+            </a>
+            (Pawelczyk, et al., 2025)
+            <a
+              href="#ref-kamath-unlearn"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-hehe-rlhf">
+            <a href="https://arxiv.org/pdf/2409.12822">
+              Language Models Learn To Mislead Humans via RLHF
+            </a>
+            (Wen et al., 2024)
+            <a
+              href="#ref-hehe-rlhf"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-hehe-untrusted">
+            <a href="https://arxiv.org/pdf/2411.17693">
+              Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats
+            </a>
+            (Wen et al., 2024)
+            <a
+              href="#ref-hehe-untrusted"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-hehe-monitoring">
+            <a href="https://arxiv.org/abs/2506.10949">
+              Monitoring Decomposition Attacks in LLMs with Lightweight
+              Sequential Monitors
+            </a>
+            (Yueh-Han et al., 2025)
+            <a
+              href="#ref-hehe-monitoring"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-linzen-context">
+            <a href="https://aclanthology.org/2026.acl-long.676/">
+              Language Models Struggle to Use Representations Learned In-Context
+            </a>
+            (Lepori et al., 2026)
+            <a
+              href="#ref-linzen-context"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-linzen-introspect">
+            <a href="https://arxiv.org/abs/2605.26242">
+              Can LLMs Introspect? A Reality Check
+            </a>
+            (Singh et al., 2026)
+            <a
+              href="#ref-linzen-introspect"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+        </ol>
+      </section>
+    </div>
+  </body>
+</html>

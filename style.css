@@ -78,6 +78,8 @@ nav hr {
 
 nav ul { list-style: none; margin: 0; padding: 0; }
 nav li { margin: 0.15em 0; }
+nav ul ul { padding-left: 1em; }
+
 nav a, nav a:visited { color: var(--nyu-violet); }
 nav a { text-decoration: none; }
 nav a:hover { text-decoration: underline; }
