@@ -192,13 +192,17 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
   font-size: 0.95em;
   color: #4a4400;
 }
-/* pointing hand is decoration */
+/* pointing hand is decoration. assets/manicule.svg is Apple Symbols' own U+261E
+   outline, extracted with fonttools, so it can't be swapped for a fallback font:
+   iOS has no Apple Symbols and was substituting color emoji, which sits higher. */
 .announcement-banner::before {
-  content: "\261E";
-  font-size: 2em;
-  line-height: 0;
-  vertical-align: -0.05em;
-  margin-right: 0.12em;
+  content: "";
+  display: inline-block;
+  width: 1.53em;
+  height: 0.78em;   /* the glyph's bbox, 1563x795 units, as a fraction of its em */
+  margin-right: 0.24em;
+  vertical-align: -0.1em;
+  background: url("assets/manicule.svg") no-repeat center / contain;
 }
 .announcement-banner a { color: inherit; }
 
