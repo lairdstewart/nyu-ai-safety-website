@@ -192,6 +192,14 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
   font-size: 0.95em;
   color: #4a4400;
 }
+/* pointing hand is decoration */
+.announcement-banner::before {
+  content: "\261E";
+  font-size: 2em;
+  line-height: 0;
+  vertical-align: -0.05em;
+  margin-right: 0.12em;
+}
 .announcement-banner a { color: inherit; }
 
 /* ---- endnotes ---- */
