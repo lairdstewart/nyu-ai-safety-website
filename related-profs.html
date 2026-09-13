@@ -307,27 +307,16 @@
           </li>
           <li>
             <a href="https://sites.google.com/view/arthurjacot/">Arthur Jacot</a
-            >. Deep learning theory
+            >. Deep learning theory. Explores which notion of functional
+            complexity the algorithms/circuits of DNNs implicitly minimize
             <a
               class="noteref"
-              id="ref-jacot-curse"
-              href="#note-jacot-curse"
+              id="ref-jacot-convex"
+              href="#note-jacot-convex"
               role="doc-noteref"
-            ></a
-            ><a
-              class="noteref"
-              id="ref-jacot-frequencies"
-              href="#note-jacot-frequencies"
-              role="doc-noteref"
-            ></a
-            >, learning mechanics
-            <a
-              class="noteref"
-              id="ref-jacot-theory"
-              href="#note-jacot-theory"
-              role="doc-noteref"
-            ></a
-            >.
+            ></a>
+            which could help ground mechanistic interpretability circuit
+            research.
           </li>
           <li>
             <a href="https://mengyeren.com/">Mengye Ren</a>. Mostly
@@ -511,8 +500,23 @@
             ></a
             >.
           </li>
+          <li>
+            <a href="https://florentinguth.github.io/">Florentin Guth</a>.
+            Models the weight distributions of trained networks to describe what
+            they encode
+            <a
+              class="noteref"
+              id="ref-guth-rainbow"
+              href="#note-guth-rainbow"
+              role="doc-noteref"
+            ></a
+            >. Could help formalize the notion of features in mechanistic
+            interpretability.
+          </li>
         </ul>
 
+        <!-- 
+          choosing to hide this to avoid nasa agenda conflation with responsible/ethical ai
         Safety-adjacent work
         <ul>
           <li>
@@ -532,6 +536,7 @@
             agents, transportation.
           </li>
         </ul>
+        -->
       </main>
 
       <!-- ENDNOTES: a sibling of <main>, not a child, so the grid places it in
@@ -854,40 +859,14 @@
               >↩</a
             >
           </li>
-          <li id="note-jacot-curse">
-            <a
-              href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/b9523d484af624986c2e0c630ac44ecb-Abstract-Conference.html"
-            >
-              How DNNs break the Curse of Dimensionality
+          <li id="note-jacot-convex">
+            <a href="https://arxiv.org/abs/2511.20888">
+              Deep Learning as a Convex Paradigm of Computation: Minimizing
+              Circuit Size with ResNets
             </a>
-            (Jacot et al., 2025)
+            (Jacot, 2025)
             <a
-              href="#ref-jacot-curse"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-jacot-frequencies">
-            <a href="https://arxiv.org/abs/2402.08010">
-              Which Frequencies do CNNs Need? Emergent Bottleneck Structure in
-              Feature Learning
-            </a>
-            (Wen, Jacot, 2026)
-            <a
-              href="#ref-jacot-frequencies"
-              role="doc-backlink"
-              aria-label="Back to reference"
-              >↩</a
-            >
-          </li>
-          <li id="note-jacot-theory">
-            <a href="https://arxiv.org/abs/2604.21691">
-              There Will Be a Scientific Theory of Deep Learning
-            </a>
-            (Simon et al., 2026)
-            <a
-              href="#ref-jacot-theory"
+              href="#ref-jacot-convex"
               role="doc-backlink"
               aria-label="Back to reference"
               >↩</a
@@ -1143,6 +1122,18 @@
             (Yoo et al., 2025)
             <a
               href="#ref-yoo-jailbreak"
+              role="doc-backlink"
+              aria-label="Back to reference"
+              >↩</a
+            >
+          </li>
+          <li id="note-guth-rainbow">
+            <a href="https://arxiv.org/abs/2305.18512">
+              A Rainbow in Deep Network Black Boxes
+            </a>
+            (Guth, et al., 2024)
+            <a
+              href="#ref-guth-rainbow"
               role="doc-backlink"
               aria-label="Back to reference"
               >↩</a
