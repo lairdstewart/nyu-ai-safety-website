@@ -251,3 +251,25 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
   height: 600px;
   border: 0;
 }
+
+/* ---- sponsor logos ---- */
+/* Each logo's flex-grow is its aspect ratio, so the widths land in proportion
+   and the three wordmarks all come out the same height at any column width. */
+.support-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.support-logos a { min-width: 0; }
+.support-logos img { display: block; width: 100%; height: auto; }
+.logo-kairos { flex: 5.11 1 0; }
+.logo-bluedot { flex: 7.54 1 0; }
+.logo-gsas { flex: 6.93 1 0; }
+
+@media (max-width: 59.99em) {
+  .support-logos { flex-direction: column; align-items: flex-start; }
+  /* stacked, so each one sits at its own natural size instead of a shared row height */
+  .support-logos a { flex: 0 0 auto; }
+  /* under the ~2.2rem the desktop row works out to at its 46em cap */
+  .support-logos img { width: auto; height: 2rem; }
+}
