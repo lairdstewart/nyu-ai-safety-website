@@ -15,8 +15,14 @@
 
 :root {
   --bar-height: 4rem;
-  --nyu-violet: #57068c;
-  --rule: #ccc; /* grey hairline divider color */
+  --nyu-violet: #330662;
+  --bar-inset: 8px;       /* how far the bar's wire stays off the page's edges */
+  --gutter: 3em;          /* the page's left edge: the nav column and the logo both start here */
+  --tint-top: #eee6f3;    /* violet tint at the top of the page, and the bar */
+  --off-white: #f7f6f8;   /* what the tint fades into, and the rest of the page */
+  --fade: 80vh;           /* how far below the bar the tint takes to reach off-white */
+  --rule: rgb(51 6 98 / 0.15);   /* every hairline on the site: --nyu-violet at 15%, just barely there */
+  --rule-scrolled: rgb(51 6 98 / 0.28);   /* the wire once the bar matches the page and is all that divides them */
 }
 
 body {
@@ -25,37 +31,47 @@ body {
   margin: 0;
 }
 
-/* ---- purple bar at top of screen ---- */
+/* the tint fades over the first screenful rather than ending on a rule. On
+   <html> so it sizes against the canvas; the color under it covers the rest. */
+html {
+  background: var(--off-white)
+              linear-gradient(var(--tint-top), var(--off-white))
+              no-repeat top / 100% var(--fade);
+}
+
+/* ---- bar at top of screen ---- */
+/* one <header class="topbar"> block on every page — copy it verbatim into a new one */
 .topbar {
-  background: var(--nyu-violet);
+  --scrolled: 0;            /* bar-fade.js: 0 at the top of the page, 1 where the fade ends */
+
+  position: sticky;         /* pinned at every width, over the menu overlay's z-index */
+  top: 0;
+  z-index: 20;
+  box-sizing: border-box;   /* the wire inside the 4rem, so the bar is exactly that tall */
   height: var(--bar-height);
+  margin: 0 var(--bar-inset) var(--bar-inset);   /* no top inset: it would vanish on pinning, reading as a shorter bar */
   display: flex;
   align-items: center;
-  padding: 0 1.5em;
+  padding: 0 1.5em 0 calc(var(--gutter) - var(--bar-inset));   /* the gutter less the inset: the logo lands on the nav's edge */
+
+  /* the bar rides the page's fade, so the two always agree across the wire */
+  background: var(--tint-top);   /* and stays tinted if the script or color-mix is missing */
+  background-color: color-mix(in srgb, var(--off-white) calc(var(--scrolled) * 100%), var(--tint-top));
+  border-bottom: 1px solid var(--rule);
+  border-bottom-color: color-mix(in srgb, var(--rule-scrolled) calc(var(--scrolled) * 100%), var(--rule));
 }
 
-/* the link home: torch + wordmark, side by side. Scoped to .wordmark so it
-   doesn't catch the menu icons. Copy the .topbar markup verbatim into a new page. */
-.topbar .wordmark {
-  display: flex;
-  gap: 0.5em;
-  color: #fff;
-  font-size: 26px;
-  font-weight: bold;
-  text-decoration: none;
-  white-space: nowrap;   /* the bar's height is fixed, so a wrap spills out of it top and bottom */
-}
-
-.topbar .torch {
-  height: 1.5em;               /* em => the torch tracks the wordmark's font-size, not the bar */
-  width: auto;                 /* keep the logo's own proportions */
+/* the bar centers it, so this is just how big it is */
+.topbar .site-logo {
+  height: 2.125rem;
+  width: auto;                 /* keep the artwork's proportions */
   display: block;              /* no inline baseline gap under the image */
 }
 
 /* ---- the nav + content grid, below the bar ---- */
 /* named areas, so each breakpoint below just redraws this little map */
 .layout {
-  padding: 1.5em 1.5em 1.5em 3em;
+  padding: 1.5em 1.5em 1.5em var(--gutter);
   display: grid;
   grid-template-columns: 15em minmax(0, 46em);   /* nav sits at the left; 46em caps the article's line length */
   grid-template-areas:
@@ -84,7 +100,10 @@ nav a, nav a:visited { color: var(--nyu-violet); }
 nav a { text-decoration: none; }
 nav a:hover { text-decoration: underline; }
 nav [aria-current="page"] { font-weight: bold; }
-main h1 { margin-top: 0; }                  /* line the heading up with the nav */
+main h1 {
+  margin-top: 0;                            /* line the heading up with the nav */
+  color: var(--nyu-violet);
+}
 
 /* the mobile-only trigger and close link, hidden on desktop */
 .menu-open, .menu-close { display: none; }
@@ -106,24 +125,20 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
 /* 59.99em, not 60em: max-width and min-width are both inclusive, so a shared
    60em boundary would make this block and the desktop one apply at once. */
 @media (max-width: 59.99em) {
+  :root { --gutter: 1em; }   /* the layout and the bar narrow together */
+
   .layout {
     grid-template-columns: 1fr;
     /* no nav row: the nav is hidden or a fixed overlay, so it never occupies one */
     grid-template-areas: "main" "notes";
     gap: 1em;
-    padding: 1em;
+    padding: var(--gutter);
   }
 
   nav { display: none; }
 
   /* the bar's X is the overlay's header — drop the label and rule, list starts at the top */
   .menu-label, nav hr { display: none; }
-
-  /* keep the purple bar pinned and above the menu overlay */
-  .topbar { position: sticky; top: 0; z-index: 20; }
-
-  /* Drop "Association" from the wordmark */
-  .wordmark-tail { display: none; }
 
   /* ---- the hamburger / X, at the right end of the bar ---- */
   /* Two anchors, not one: :target keys off the href, which CSS can't rewrite.
@@ -137,7 +152,7 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
   /* the middle bar; the outer two are the pseudo-elements */
   .menu-open {
     display: block;
-    background: linear-gradient(#fff, #fff) center / 1.375rem 2px no-repeat;
+    background: linear-gradient(var(--nyu-violet), var(--nyu-violet)) center / 1.375rem 2px no-repeat;
   }
 
   body:has(nav:target) .menu-open { display: none; }
@@ -150,7 +165,7 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
     top: 50%; left: 50%;
     width: 1.375rem; height: 2px;
     margin: -1px 0 0 -0.6875rem;   /* half its own size, to center */
-    background: #fff;
+    background: var(--nyu-violet);
   }
   .menu-open::before          { transform: translateY(-0.4rem); }
   .menu-open::after           { transform: translateY(0.4rem); }
@@ -171,8 +186,13 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
   nav:target {
     display: block;
     position: fixed;
-    inset: var(--bar-height) 0 0 0;   /* start below the bar, not over it */
-    background: #fff;
+    inset: var(--bar-height) 0 0 0;   /* the pinned bar's bottom edge; at rest the bar covers the overlap */
+    /* the overlay is its own surface over the page, so it has to repeat the
+       fade — starting at its own top edge, which is where the page's begins */
+    background-color: var(--off-white);
+    background-image: linear-gradient(var(--tint-top), var(--off-white));
+    background-repeat: no-repeat;
+    background-size: 100% var(--fade);
     padding: 1em;
     overflow-y: auto;      /* long trees must stay reachable */
     z-index: 10;
@@ -227,7 +247,7 @@ main h1 { margin-top: 0; }                  /* line the heading up with the nav 
    own 2em row gap does the spacing */
 .endnotes {
   padding-top: 1em;
-  border-top: 1px solid var(--rule);   /* same hairline as the nav divider */
+  border-top: 1px solid var(--rule);
 }
 .endnotes ol { list-style: none; padding-left: 0; }   /* the counter numbers these, not the list marker */
 .endnotes li { counter-increment: endnote; margin-bottom: 0.5em; }
