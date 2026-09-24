@@ -4,10 +4,10 @@
 <svg
    version="1.1"
    id="svg1"
-   width="148.43387"
-   height="148.43387"
-   viewBox="0 0 148.43387 148.43387"
-   sodipodi:docname="nasa-square-logo-purple-background.svg"
+   width="101.65946"
+   height="118.51974"
+   viewBox="0 0 101.65946 118.51975"
+   sodipodi:docname="site-icon.svg"
    inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
    inkscape:export-filename="nasa-square-logo-off-white-background.png"
    inkscape:export-xdpi="517.40002"
@@ -28,8 +28,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="2.7188216"
-     inkscape:cx="78.342765"
-     inkscape:cy="76.871539"
+     inkscape:cx="53.699735"
+     inkscape:cy="62.527089"
      inkscape:window-width="1512"
      inkscape:window-height="921"
      inkscape:window-x="0"
@@ -38,32 +38,19 @@
      inkscape:current-layer="layer1" />
   <g
      inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="background"
-     transform="translate(-22.202637,-25.217819)">
-    <rect
-       style="fill:#330662;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:normal;fill-opacity:1"
-       id="rect5"
-       width="148.43387"
-       height="148.43387"
-       x="22.202637"
-       y="25.217819" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="logo"
-     transform="translate(-22.202637,-25.217819)">
+     transform="translate(-47.160018,-39.43558)">
     <path
-       style="fill:#eee6f3;fill-opacity:1;stroke-width:0.869619"
+       style="fill:#330662;fill-opacity:1;stroke-width:0.869619"
        d="m 130.55078,77.243291 c 0,0 7.44061,6.537878 6.24821,17.038104 l -27.18687,10.549745 c 0,0 -1.29623,-0.85544 -2.0441,-2.71932 l -25.278036,10.17365 c 0,0 -0.972233,-0.93193 -1.869678,-2.48516 l -16.453159,5.97992 c 0,0 0.523509,0.93194 -0.149574,2.56283 0,0 -5.309884,-3.10646 -4.038503,-10.95025 0,0 0.972232,0.23298 1.570529,1.3979 l 15.929649,-6.21291 c 0,0 -0.299148,-1.08727 0.299149,-3.339432 l 25.203253,-9.397032 c 0,0 0.0748,-2.174519 0.37394,-3.106456 z"
        id="path1" />
     <path
-       style="display:inline;fill:#eee6f3;fill-opacity:1;stroke-width:0.869619"
+       style="display:inline;fill:#330662;fill-opacity:1;stroke-width:0.869619"
        d="m 102.37972,114.3368 10.81521,17.27828 c 0,0 3.11977,3.09569 1.52522,-1.36786 -1.59455,-4.46356 -11.0232,-22.0298 -11.0232,-22.0298 0,0 -1.31723,-1.36787 -3.11978,0.43195 -1.802526,1.79982 -14.142966,28.0052 -14.142966,28.0052 0,0 -0.97059,2.51975 1.31724,1.15188 2.28784,-1.36786 14.628276,-23.46965 14.628276,-23.46965 z"
        id="path2" />
     <path
-       style="display:inline;fill:none;fill-opacity:1;stroke:#eee6f3;stroke-width:4.83503;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#330662;stroke-width:4.83503;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path3"
        sodipodi:type="arc"
        sodipodi:cx="33.229462"
@@ -78,7 +65,7 @@
        sodipodi:open="true" />
     <path
        sodipodi:type="star"
-       style="fill:#eee6f3;fill-opacity:1;stroke:none;stroke-width:3;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#330662;fill-opacity:1;stroke:none;stroke-width:3;stroke-dasharray:none;stroke-opacity:1"
        id="path4"
        inkscape:flatsided="false"
        sodipodi:sides="4"
