@@ -57,6 +57,10 @@ html {
   /* the bar rides the page's fade, so the two always agree across the wire */
   background: var(--tint-top);   /* and stays tinted if the script or color-mix is missing */
   background-color: color-mix(in srgb, var(--off-white) calc(var(--scrolled) * 100%), var(--tint-top));
+  /* the same color carried above the bar: Firefox mobile pins it to the layout
+     viewport, which lags the visual one while the URL bar slides away, and the
+     page would otherwise show through the gap that opens at the top */
+  box-shadow: 0 -6rem 0 color-mix(in srgb, var(--off-white) calc(var(--scrolled) * 100%), var(--tint-top));
   border-bottom: 1px solid var(--rule);
   border-bottom-color: color-mix(in srgb, var(--rule-scrolled) calc(var(--scrolled) * 100%), var(--rule));
 }
@@ -208,7 +212,7 @@ main h1 {
   padding: 0.75em 1em;
   background: #fcfad3;
   border: 1px solid #cfc23c;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 0.95em;
   color: #4a4400;
 }
