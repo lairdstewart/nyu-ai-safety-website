@@ -4,9 +4,9 @@
 <svg
    version="1.1"
    id="svg1"
-   width="101.65946"
-   height="118.51974"
-   viewBox="0 0 101.65946 118.51975"
+   width="130.57228"
+   height="130.57228"
+   viewBox="0 0 130.57228 130.57229"
    sodipodi:docname="site-icon.svg"
    inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
    inkscape:export-filename="nasa-square-logo-off-white-background.png"
@@ -28,8 +28,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="2.7188216"
-     inkscape:cx="53.699735"
-     inkscape:cy="62.527089"
+     inkscape:cx="66.940766"
+     inkscape:cy="66.572959"
      inkscape:window-width="1512"
      inkscape:window-height="921"
      inkscape:window-x="0"
@@ -40,7 +40,14 @@
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="logo"
-     transform="translate(-47.160018,-39.43558)">
+     transform="translate(-33.918485,-35.550176)">
+    <rect
+       style="fill:#eee6f3;stroke:#ffffff;stroke-width:0.00103499;stroke-linejoin:round"
+       id="rect1"
+       width="130.57124"
+       height="130.57124"
+       x="33.919003"
+       y="35.550694" />
     <path
        style="fill:#330662;fill-opacity:1;stroke-width:0.869619"
        d="m 130.55078,77.243291 c 0,0 7.44061,6.537878 6.24821,17.038104 l -27.18687,10.549745 c 0,0 -1.29623,-0.85544 -2.0441,-2.71932 l -25.278036,10.17365 c 0,0 -0.972233,-0.93193 -1.869678,-2.48516 l -16.453159,5.97992 c 0,0 0.523509,0.93194 -0.149574,2.56283 0,0 -5.309884,-3.10646 -4.038503,-10.95025 0,0 0.972232,0.23298 1.570529,1.3979 l 15.929649,-6.21291 c 0,0 -0.299148,-1.08727 0.299149,-3.339432 l 25.203253,-9.397032 c 0,0 0.0748,-2.174519 0.37394,-3.106456 z"
