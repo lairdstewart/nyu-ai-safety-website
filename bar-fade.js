@@ -19,7 +19,7 @@
   }
 
   function update() {
-    var progress = distance > 0 ? Math.min(window.scrollY / distance, 1) : 1;
+    var progress = distance > 0 ? Math.min(window.scrollY / distance, 1) : 0;
     bar.style.setProperty("--scrolled", progress);
   }
 
