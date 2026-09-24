@@ -18,7 +18,7 @@
   --nyu-violet: #330662;
   --bar-inset: 8px;       /* how far the bar's wire stays off the page's edges */
   --gutter: 3em;          /* the page's left edge: the nav column and the logo both start here */
-  --tint-top: #eee6f3;    /* violet tint at the top of the page, and the bar */
+  --tint-top: #e8ddf0;    /* violet tint at the top of the page, and the bar */
   --off-white: #f7f6f8;   /* what the tint fades into, and the rest of the page */
   --fade: 80vh;           /* how far below the bar the tint takes to reach off-white */
   --rule: rgb(51 6 98 / 0.15);   /* every hairline on the site: --nyu-violet at 15%, just barely there */
