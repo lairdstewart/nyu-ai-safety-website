@@ -207,8 +207,8 @@ main h1 {
 
 /* ---- announcement banner ---- */
 /* NYU accent yellow #f4ec51 */
-.announcement-banner {
-  margin: 0 0 1.5em;
+.announcement-banner,
+.announcement-card {
   padding: 0.75em 1em;
   background: #fcfad3;
   border: 1px solid #cfc23c;
@@ -219,7 +219,8 @@ main h1 {
 /* pointing hand is decoration. assets/manicule.svg is Apple Symbols' own U+261E
    outline, extracted with fonttools, so it can't be swapped for a fallback font:
    iOS has no Apple Symbols and was substituting color emoji, which sits higher. */
-.announcement-banner::before {
+.announcement-banner::before,
+.announcement-card::before {
   content: "";
   display: inline-block;
   width: 1.53em;
@@ -228,7 +229,23 @@ main h1 {
   vertical-align: -0.1em;
   background: url("assets/manicule.svg") no-repeat center / contain;
 }
-.announcement-banner a { color: inherit; }
+.announcement-banner a,
+.announcement-card a { color: inherit; }
+
+.announcement-banner { margin: 0 0 1.5em; }
+
+/* a row of cards instead of one full-width strip: the row carries the spacing */
+.announcement-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 0 0 1.5em;
+}
+/* equal basis + equal grow = equal halves; they wrap to full width below ~33em */
+.announcement-card {
+  flex: 1 1 16em;
+  margin: 0;
+}
 
 /* ---- endnotes ---- */
 /* Both numerals are generated, so document order is the only source of truth:
