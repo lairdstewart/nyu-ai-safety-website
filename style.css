@@ -210,11 +210,11 @@ main h1 {
 .announcement-banner,
 .announcement-card {
   padding: 0.75em 1em;
-  background: #fcfad3;
-  border: 1px solid #cfc23c;
+  background: #fcfad380;
+  border: 1px solid #cfc23c80;
   border-radius: 10px;
   font-size: 0.95em;
-  color: #4a4400;
+  color: #4a4400; /* font color */
 }
 /* pointing hand is decoration. assets/manicule.svg is Apple Symbols' own U+261E
    outline, extracted with fonttools, so it can't be swapped for a fallback font:
